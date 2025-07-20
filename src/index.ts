@@ -1,7 +1,6 @@
-// index.ts
+
 import dotenv from "dotenv";
 import app from "./app";
-import serverless from "serverless-http";
 
 dotenv.config();
 
@@ -12,5 +11,3 @@ if (process.env.NODE_ENV !== "production") {
     console.log(`🚀 OTP Service running on http://localhost:${PORT}`);
   });
 }
-
-export default serverless(app);
