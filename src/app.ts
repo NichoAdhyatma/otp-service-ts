@@ -11,6 +11,12 @@ app.use(express.json());
 app.use(requestLogger);
 app.use(limiter);
 
+app.use((req, res, next) => {
+  console.log(`[DEBUG] ${req.method} ${req.url}`);
+  next();
+});
+
+
 app.use("/api", otpRouter);
 
 app.use("/", baseRoute);
