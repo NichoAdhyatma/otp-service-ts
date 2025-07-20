@@ -1,5 +1,4 @@
-import type { OTPRepository } from "../domain/repositories/otp-repository";
-
+import type { OTPRepository } from "../repositories/otp-repository";
 
 export class VerifyOTP {
   constructor(private repository: OTPRepository) {}
@@ -12,7 +11,7 @@ export class VerifyOTP {
     const valid = otp.matches(code);
 
     if (valid) this.repository.delete(phoneNumber);
-    
+
     return valid;
   }
 }

@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
-import otpRoutes from "./routes/otp";
-import { requestLogger } from "./middlewares/request-logger";
-import { limiter } from "./middlewares/rate-limiter";
-
+import { limiter } from "./presentation/middlewares/rate-limiter";
+import { requestLogger } from "./presentation/middlewares/request-logger";
+import otpRouter from "./presentation/routes/otp-routes";
+import baseRoute from "./presentation/routes/base-routes";
 
 const app = express();
 app.use(cors());
@@ -11,8 +11,8 @@ app.use(express.json());
 app.use(requestLogger);
 app.use(limiter);
 
+app.use("/api", otpRouter);
 
-
-app.use("/api", otpRoutes);
+app.use("/", baseRoute);
 
 export default app;

@@ -1,5 +1,5 @@
-import { OTP } from "../../domain/entities/OTP";
-import type { OTPRepository } from "../../domain/repositories/otp-repository";
+import type { OTP } from "../../../domain/entities/OTP";
+import type { OTPRepository } from "../../../domain/repositories/otp-repository";
 
 export class OTPRepositoryMemory implements OTPRepository {
   private store = new Map<string, OTP>();
