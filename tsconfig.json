@@ -1,4 +1,6 @@
 {
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     // Enable latest features
     "lib": ["ESNext", "DOM"],
@@ -7,12 +9,12 @@
     "moduleDetection": "force",
     "jsx": "react-jsx",
     "allowJs": true,
+    "outDir": "dist",
 
     // Bundler mode
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
-    "noEmit": true,
+    "noEmit": false,
 
     // Best practices
     "strict": true,
@@ -24,6 +26,6 @@
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false,
 
-    "baseUrl": ".",
+    "baseUrl": ""
   }
 }
