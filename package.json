@@ -3,7 +3,8 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch api/index.ts",
+    "build": "bun build api/index.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
@@ -22,8 +23,8 @@
     "dayjs": "^1.11.13",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
-    "express-rate-limit": "^8.0.1",
     "serverless-http": "^3.2.0",
+    "serverless-offline": "^14.4.0",
     "winston": "^3.17.0",
     "winston-daily-rotate-file": "^5.0.0"
   }
